@@ -41,7 +41,6 @@ class OoniProbe < Formula
     system "python", 'setup.py', 'install', "--prefix=#{prefix}",
                    "--record=installed.txt",  "--single-version-externally-managed"
   end
-
 end
 
 __END__

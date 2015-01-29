@@ -45,5 +45,4 @@ class CpyritCuda < Formula
     system "python", "setup.py", "build"
     system "python", "setup.py", "install", "--prefix=#{prefix}"
   end
-
 end

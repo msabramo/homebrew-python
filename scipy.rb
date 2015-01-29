@@ -102,5 +102,4 @@ class Scipy < Formula
       EOS
     end
   end
-
 end

@@ -105,5 +105,4 @@ class Numpy < Formula
       EOS
     end
   end
-
 end
