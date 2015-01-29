@@ -5,21 +5,21 @@ require 'formula'
 # todo: depends_on :x11 ???
 
 class Pygame < Formula
-  homepage 'http://pygame.org'
-  url 'http://pygame.org/ftp/pygame-1.9.1release.tar.gz'
-  sha1 'a45aeb0623e36ae7a1707b5f41ee6274f72ca4fa'
-  head 'https://bitbucket.org/pygame/pygame', :using => :hg
+  homepage "http://pygame.org"
+  url "http://pygame.org/ftp/pygame-1.9.1release.tar.gz"
+  sha1 "a45aeb0623e36ae7a1707b5f41ee6274f72ca4fa"
+  head "https://bitbucket.org/pygame/pygame", :using => :hg
 
   depends_on :python
-  depends_on 'sdl'
-  depends_on 'sdl_image'
-  depends_on 'sdl_mixer'
-  depends_on 'sdl_ttf'
-  depends_on 'homebrew/headonly/smpeg'
-  depends_on 'jpeg'
-  depends_on 'libpng'
-  depends_on 'portmidi'
-  depends_on 'numpy'
+  depends_on "sdl"
+  depends_on "sdl_image"
+  depends_on "sdl_mixer"
+  depends_on "sdl_ttf"
+  depends_on "homebrew/headonly/smpeg"
+  depends_on "jpeg"
+  depends_on "libpng"
+  depends_on "portmidi"
+  depends_on "numpy"
 
   # Upstream https://bitbucket.org/pygame/pygame/issue/94/src-scale_mmx64c-cannot-be-compiled-with
   # Will be fixed in next release.
@@ -32,7 +32,7 @@ class Pygame < Formula
     # We provide a "Setup" file based on the "Setup.in" because the detection
     # code in config.py does not know about the HOMEBREW_PREFIX, assumes SDL
     # is built as a framework and cannot find the Frameworks inside of Xcode.
-    mv 'Setup.in', 'Setup'
+    mv "Setup.in", "Setup"
     sdl = Formula["sdl"].opt_prefix
     sdl_ttf = Formula["sdl_ttf"].opt_prefix
     sdl_image = Formula["sdl_image"].opt_prefix
@@ -41,7 +41,7 @@ class Pygame < Formula
     png = Formula["libpng"].opt_prefix
     jpeg = Formula["jpeg"].opt_prefix
     portmidi = Formula["portmidi"].opt_prefix
-    inreplace 'Setup' do |s|
+    inreplace "Setup" do |s|
       s.gsub!(/^SDL =.*$/, "SDL = -I#{sdl}/include/SDL -Ddarwin -lSDL")
       s.gsub!(/^FONT =.*$/, "FONT = -I#{sdl_ttf}/include/SDL -lSDL_ttf")
       s.gsub!(/^IMAGE =.*$/, "IMAGE = -I#{sdl_image}/include/SDL -lSDL_image")

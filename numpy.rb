@@ -22,7 +22,7 @@ class Numpy < Formula
   depends_on :fortran
   depends_on NoUserConfig
 
-  option 'with-openblas', "Use openBLAS instead of Apple's Accelerate Framework"
+  option "with-openblas", "Use openBLAS instead of Apple's Accelerate Framework"
   depends_on "homebrew/science/openblas" => :optional
 
   resource "nose" do
@@ -45,12 +45,12 @@ class Numpy < Formula
       include_dirs = #{HOMEBREW_PREFIX}/include
     EOS
 
-    if build.with? 'openblas'
+    if build.with? "openblas"
       openblas_dir = Formula["openblas"].opt_prefix
       # Setting ATLAS to None is important to prevent numpy from always
       # linking against Accelerate.framework.
-      ENV['ATLAS'] = "None"
-      ENV['BLAS'] = ENV['LAPACK'] = "#{openblas_dir}/lib/libopenblas.dylib"
+      ENV["ATLAS"] = "None"
+      ENV["BLAS"] = ENV["LAPACK"] = "#{openblas_dir}/lib/libopenblas.dylib"
 
       config << <<-EOS.undent
         [openblas]
@@ -60,7 +60,7 @@ class Numpy < Formula
       EOS
     end
 
-    Pathname('site.cfg').write config
+    Pathname("site.cfg").write config
 
     if (HOMEBREW_CELLAR/"gfortran").directory?
         opoo <<-EOS.undent

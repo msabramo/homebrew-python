@@ -2,7 +2,7 @@ require 'formula'
 
 class JdkInstalled < Requirement
   fatal true
-  satisfy{ which 'javac'}
+  satisfy{ which "javac"}
   def message; <<-EOS.undent
     A JDK is required.  You can get the official Oracle installers from:
     http://www.oracle.com/technetwork/java/javase/downloads/index.html
@@ -22,7 +22,7 @@ class JavaHome < Requirement
 end
 
 class Pydoop < Formula
-  homepage 'http://pydoop.sourceforge.net/'
+  homepage "http://pydoop.sourceforge.net/"
   url "https://github.com/crs4/pydoop/archive/0.12.0.tar.gz"
   sha1 "78aad0d6dab093d9876dd835c5792ba4329e40b6"
 
@@ -36,14 +36,14 @@ class Pydoop < Formula
   def install
     unless(ENV["HADOOP_HOME"])
       ohai "HADOOP_HOME is not set. Using brewed version"
-      ENV.append 'HADOOP_HOME', Formula["hadoop"].libexec
+      ENV.append "HADOOP_HOME", Formula["hadoop"].libexec
     end
     unless(ENV["BOOST_PYTHON"])
-      ENV['BOOST_PYTHON'] = 'boost_python-mt'
+      ENV["BOOST_PYTHON"] = "boost_python-mt"
     end
     inreplace "setup.py", 'self.compiler.linker_so.append("-Wl,--no-as-needed")', ""
 
-    system "python", 'setup.py', 'install', "--prefix=#{prefix}"
+    system "python", "setup.py", "install", "--prefix=#{prefix}"
     prefix.install %w[test examples]
   end
 

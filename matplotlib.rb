@@ -61,8 +61,8 @@ class Matplotlib < Formula
 
   if build.with? "python"
     depends_on "pygtk" => :optional
-    depends_on "pygobject" if build.with? 'pygtk'
-    depends_on "gtk+" if build.with? 'pygtk'
+    depends_on "pygobject" if build.with? "pygtk"
+    depends_on "gtk+" if build.with? "pygtk"
   end
 
   if build.with? "python3"

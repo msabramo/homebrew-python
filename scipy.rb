@@ -1,17 +1,17 @@
 require 'formula'
 
 class Scipy < Formula
-  homepage 'http://www.scipy.org'
-  url 'https://downloads.sourceforge.net/project/scipy/scipy/0.15.1/scipy-0.15.1.tar.gz'
-  sha1 '7ef714ffe95230cd2ce78c51af18983bbe762f2e'
-  head 'https://github.com/scipy/scipy.git'
+  homepage "http://www.scipy.org"
+  url "https://downloads.sourceforge.net/project/scipy/scipy/0.15.1/scipy-0.15.1.tar.gz"
+  sha1 "7ef714ffe95230cd2ce78c51af18983bbe762f2e"
+  head "https://github.com/scipy/scipy.git"
 
   depends_on :python => :recommended
   depends_on :python3 => :optional
-  depends_on 'swig' => :build
+  depends_on "swig" => :build
   depends_on :fortran
-  option 'with-openblas', "Use openBLAS instead of Apple's Accelerate Framework"
-  depends_on 'homebrew/science/openblas' => :optional
+  option "with-openblas", "Use openBLAS instead of Apple's Accelerate Framework"
+  depends_on "homebrew/science/openblas" => :optional
 
   numpy_options = []
   numpy_options << "with-python3" if build.with? "python3"
@@ -27,7 +27,7 @@ class Scipy < Formula
       include_dirs = #{HOMEBREW_PREFIX}/include
 
     EOS
-    if build.with? 'openblas'
+    if build.with? "openblas"
       # For maintainers:
       # Check which BLAS/LAPACK numpy actually uses via:
       # xcrun otool -L $(brew --prefix)/Cellar/scipy/<version>/lib/python2.7/site-packages/scipy/linalg/_flinalg.so
@@ -35,8 +35,8 @@ class Scipy < Formula
       openblas_dir = Formula["openblas"].opt_prefix
       # Setting ATLAS to None is important to prevent numpy from always
       # linking against Accelerate.framework.
-      ENV['ATLAS'] = "None"
-      ENV['BLAS'] = ENV['LAPACK'] = "#{openblas_dir}/lib/libopenblas.dylib"
+      ENV["ATLAS"] = "None"
+      ENV["BLAS"] = ENV["LAPACK"] = "#{openblas_dir}/lib/libopenblas.dylib"
 
       config << <<-EOS.undent
         [openblas]
@@ -51,10 +51,10 @@ class Scipy < Formula
 
       # https://github.com/Homebrew/homebrew-python/pull/73
       # Only save for gcc and allows you to `brew install scipy --cc=gcc-4.8`
-      # ENV.append 'CPPFLAGS', '-D__ACCELERATE__' if ENV.compiler =~ /gcc-(4\.[3-9])/
+      # ENV.append "CPPFLAGS", "-D__ACCELERATE__" if ENV.compiler =~ /gcc-(4\.[3-9])/
     end
 
-    Pathname('site.cfg').write config
+    Pathname("site.cfg").write config
 
     if (HOMEBREW_CELLAR/"gfortran").directory?
         opoo <<-EOS.undent
