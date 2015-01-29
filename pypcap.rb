@@ -1,5 +1,3 @@
-require 'formula'
-
 class Pypcap < Formula
   homepage 'http://code.google.com/p/pypcap/'
   # url 'http://pypcap.googlecode.com/files/pypcap-1.1.tar.gz'

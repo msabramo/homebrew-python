@@ -1,5 +1,3 @@
-require 'formula'
-
 class Scapy < Formula
   homepage 'http://www.secdev.org/projects/scapy/'
   url 'http://www.secdev.org/projects/scapy/files/scapy-2.2.0.tar.gz'

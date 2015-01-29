@@ -1,5 +1,3 @@
-require "formula"
-
 class TexRequirement < Requirement
   fatal false
   env :userpaths

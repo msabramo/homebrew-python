@@ -1,5 +1,3 @@
-require 'formula'
-
 # Todo: Install examples, run test
 # todo: What about sdl_gfx?
 # todo: depends_on :x11 ???

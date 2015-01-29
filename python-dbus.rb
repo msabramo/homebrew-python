@@ -1,5 +1,3 @@
-require "formula"
-
 class PythonDbus < Formula
   homepage "http://freedesktop.org"
   url "http://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.2.0.tar.gz"

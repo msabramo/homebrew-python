@@ -1,5 +1,3 @@
-require "formula"
-
 class MatplotlibBasemap < Formula
   homepage "http://matplotlib.org/basemap"
   url "https://downloads.sourceforge.net/project/matplotlib/matplotlib-toolkits/basemap-1.0.7/basemap-1.0.7.tar.gz"

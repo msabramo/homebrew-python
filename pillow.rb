@@ -1,5 +1,3 @@
-require "formula"
-
 class Pillow < Formula
   homepage "https://github.com/python-imaging/Pillow"
   url "https://github.com/python-pillow/Pillow/archive/2.7.0.tar.gz"

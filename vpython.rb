@@ -1,5 +1,3 @@
-require "formula"
-
 class Vpython < Formula
   url "https://downloads.sourceforge.net/project/vpythonwx/6.10-release/vpython-wx-src.6.10.tgz"
   sha1 "d51ca07dad92a1ae9a3d5cc57af48b180f457228"

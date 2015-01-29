@@ -1,5 +1,3 @@
-require 'formula'
-
 class OoniProbe < Formula
   homepage 'https://github.com/TheTorProject/ooni-probe'
   url 'https://github.com/TheTorProject/ooni-probe/archive/v0.0.10.tar.gz'

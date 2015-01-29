@@ -1,5 +1,3 @@
-require 'formula'
-
 class Pyrit < Formula
   homepage 'https://code.google.com/p/pyrit/'
   url 'https://pyrit.googlecode.com/files/pyrit-0.4.0.tar.gz'

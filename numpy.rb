@@ -1,5 +1,3 @@
-require 'formula'
-
 class NoUserConfig < Requirement
   def satisfied?
     not File.exist? "#{ENV['HOME']}/.numpy-site.cfg"

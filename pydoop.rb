@@ -1,5 +1,3 @@
-require 'formula'
-
 class JdkInstalled < Requirement
   fatal true
   satisfy{ which 'javac'}

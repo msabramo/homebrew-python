@@ -1,5 +1,3 @@
-require 'formula'
-
 class Scipy < Formula
   homepage 'http://www.scipy.org'
   url 'https://downloads.sourceforge.net/project/scipy/scipy/0.15.1/scipy-0.15.1.tar.gz'

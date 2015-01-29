@@ -1,5 +1,3 @@
-require 'formula'
-
 class CudaRequirement < Requirement
   build true
   fatal true

@@ -1,5 +1,3 @@
-require "formula"
-
 class Retext < Formula
   homepage "http://sourceforge.net/projects/retext/"
   url "https://downloads.sourceforge.net/project/retext/ReText-4.1/ReText-4.1.3.tar.gz"
